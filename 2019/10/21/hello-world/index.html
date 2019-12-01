@@ -4,8 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Hexo">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="【读好书第二期】JS 的变量、作用域及内存问题, Hexo">
+    <meta name="description" content="前言
+JavaScript 变量松散类型的本质，决定了它只是在特定时间用于保存特定值的一个名字而已。
+
+因为上述的 javascript 变量的特质，导致 javascript 语言既强大又有趣，然而也会出现各种问题。
+今天这篇文章，重点讲">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | Hexo</title>
+    <title>【读好书第二期】JS 的变量、作用域及内存问题 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -330,13 +334,13 @@
 
  
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        【读好书第二期】JS 的变量、作用域及内存问题
                     </div>
                 </div>
             </div>
@@ -470,15 +474,132 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>JavaScript 变量松散类型的本质，决定了它只是在特定时间用于保存特定值的一个名字而已。</p>
+</blockquote>
+<p>因为上述的 javascript 变量的特质，导致 javascript 语言既强大又有趣，然而也会出现各种问题。</p>
+<p>今天这篇文章，重点讲述了什么是变量，基本类型和引用类型的区别，作用域的相关概念。还简单描述了 javascript 的垃圾回收机制。</p>
+<h2 id="基本类型-amp-引用类型"><a href="#基本类型-amp-引用类型" class="headerlink" title="基本类型&amp;引用类型"></a>基本类型&amp;引用类型</h2><blockquote>
+<p>基本类型概念：基本类型是简单的数据段</p>
+</blockquote>
+<p>在上一次的文章中提到，基本类型有五种：</p>
+<ul>
+<li>undefined</li>
+<li>null</li>
+<li>string</li>
+<li>boolean</li>
+<li>number</li>
+</ul>
+<blockquote>
+<p>引用类型概念：引用类型值指那些可能由多个值构成的对象。引用类型的值是按引用访问的。</p>
+</blockquote>
+<p>那么，怎么理解按引用访问呢？</p>
+<p>引用类型的值是保存在内存中的对象，在操作对象时，实际上是在操作对象的引用而不是实际的对象。</p>
+<h3 id="引用类型的动态属性"><a href="#引用类型的动态属性" class="headerlink" title="引用类型的动态属性"></a>引用类型的动态属性</h3><p>对于引用类型，我们可以为其添加<code>属性</code>和<code>方法</code>，也可以改变和删除<code>属性</code>和<code>方法</code>。</p>
+<pre class=" language-javascript"><code class="language-javascript">varperson <span class="token operator">=</span> <span class="token function">newObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+person<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"Nicholas"</span><span class="token punctuation">;</span>
+<span class="token function">alert</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//"Nicholas"</span></code></pre>
+<p>而对于基本类型，这种添加就是无效的了。</p>
+<h3 id="复制变量的值"><a href="#复制变量的值" class="headerlink" title="复制变量的值"></a>复制变量的值</h3><ul>
+<li>复制基本类型</li>
+</ul>
+<p>如果从一个变量向另一个变量复制基本类型的值，会在变量对象上创建一个新值，然后把该值复制到为新变量分配的位置上。</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g998x08nnsj30dk0oi3zd.jpg" alt="image-20191124171403201"></p>
+<p>也就是说，复制之后的变量和原变量相互独立。</p>
+<ul>
+<li>复制引用类型</li>
+</ul>
+<p>当从一个变量向另一个变量复制引用类型的值时，同样也会将存储在变量对象中的值复制一份放到为新变量分配的空间中。不同的是，这个值的副本实际上是一个指针，而这个指针指向存储在堆中的一个对象。复制操作结束后，两个变量实际上将引用同一个对象。因此，改变其中一个变量，就会影响另一个变量。</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g998yst4mhj30py0g8myc.jpg" alt="image-20191124171552105"></p>
+<h3 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h3><blockquote>
+<p>ECMAScript 中所有函数的参数都是按值传递的。</p>
+</blockquote>
+<p>这意味着，引用类型在函数传参的时候，也是按照值传递，而不是引用传递。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">setName</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"Nicholas"</span><span class="token punctuation">;</span>
+  obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"Greg"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token function">newObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">setName</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">alert</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//"Nicholas"</span></code></pre>
+<p>出现上面这个情况的根本原因是：引用类型在参数传递是，也是按照值传递，而且当在函数内部重写 obj 时，这个变量引用的就是一个局部对象了。而这个局部对象会在函数执行完毕后立即被销毁。所以外部 alert 的 Person.name 是 Nicholas。</p>
+<h3 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h3><p>类型检测的两种方式：</p>
+<p>typeof 和 instanceof</p>
+<p><code>typeof</code>的缺点在于，它只能检测出基本类型，而对于所有的引用类型（函数除外）都返回<code>Object</code>。</p>
+<p>所以，如果你想检测一个引用类型的话，你应该这样处理：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span>person <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//变量person是Object吗？</span>
+<span class="token function">alert</span><span class="token punctuation">(</span>colors <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//变量colors是Array吗？</span>
+<span class="token function">alert</span><span class="token punctuation">(</span>pattern <span class="token keyword">instanceof</span> <span class="token class-name">RegExp</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//变量pattern是RegExp吗？</span></code></pre>
+<h3 id="执行环境和作用域"><a href="#执行环境和作用域" class="headerlink" title="执行环境和作用域"></a>执行环境和作用域</h3><blockquote>
+<p>执行环境定义了变量或函数有权访问的其他数据，决定了它们各自的行为。每个执行环境都有一个与之关联的变量对象（variableobject），环境中定义的所有变量和函数都保存在这个对象中。</p>
+</blockquote>
+<p>这个定义很重要，它表明每一个执行环境都有一个变量对象，用来保存变量和函数。比如全局的变量对象 windows。</p>
+<p>而某个执行环境代码执行完毕时，这个变量对象就会被销毁，比如浏览器关闭的时候。windows 对象就会被销毁。</p>
+<p>每个函数都有自己的执行环境。当执行流进入一个函数时，函数的环境就会被<code>推入</code>一个<code>环境栈</code>中。而在函数执行之后，栈将其环境弹出，把控制权返回给之前的执行环境。</p>
+<h4 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h4><blockquote>
+<p>当代码在一个环境中执行时，会创建变量对象的一个作用域链（scopechain）。保证对执行环境有权访问的所有变量和函数的有序访问。</p>
+</blockquote>
+<p>有序访问代表作用域是一层一层网上访问的。</p>
+<p>作用域链的前端，始终都是当前执行的代码所在环境的变量对象。</p>
+<p>如果这个环境是函数，则将其活动对象（activationobject）作为变量对象。</p>
+<p>活动对象在最开始时只包含一个变量，即 arguments 对象（这个对象在全局环境中是不存在的）。</p>
+<p>作用域链中的下一个变量对象来自包含（外部）环境，而再下一个变量对象则来自下一个包含环境。</p>
+<p>这样，一直延续到全局执行环境。</p>
+<p><strong>全局执行环境的变量</strong>对象始终都是作用域链中的<strong>最后一个对象</strong>。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> color<span class="token operator">=</span><span class="token string">"blue"</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> changeColor <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> anotherColor<span class="token operator">=</span><span class="token string">"red"</span><span class="token punctuation">;</span>
+  <span class="token keyword">function</span> <span class="token function">swapColors</span><span class="token punctuation">(</span>
+  <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> tempColor<span class="token operator">=</span>anotherColor<span class="token punctuation">;</span>
+    anotherColor<span class="token operator">=</span>color<span class="token punctuation">;</span>
+    color<span class="token operator">=</span>tempColor<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//这里可以访问color、anotherColor和tempColor</span>
+  <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//这里可以访问color和anotherColor，但不能访问tempColor</span>
+  <span class="token function">swapColors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//这里只能访问colorchangeColor();</span>
+<span class="token function">changeColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g999edmzcsj30f60i63yw.jpg" alt="image-20191124173051826"></p>
+<p>下面两种方法可以延长作用域链</p>
+<ul>
+<li>trycatch 语句的 catch 块；</li>
+<li>with 语句。</li>
+</ul>
+<p><strong>没有块级作用域</strong></p>
+<p>我们在使用 for 循环的时候，常常有下面的困惑。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">for</span> <span class="token punctuation">(</span>vari <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">doSomething</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">alert</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//10</span></code></pre>
+<p>这就是因为在 js 中没有块级作用域导致的。</p>
+<p><strong>变量所在环境</strong></p>
+<p>用 var 声明变量时，会被添加到最近的执行环境。如果没有使用 var，就会放到全局的变量环境。</p>
+<p><strong>变量的搜索过程</strong></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> color <span class="token operator">=</span> <span class="token string">"blue"</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">getColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> color<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">alert</span><span class="token punctuation">(</span><span class="token function">getColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//"blue"</span></code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g999muw8p9j30fa0h4wet.jpg" alt="image-20191124173900841"></p>
+<p>上图表示，调用 getColor 方法的时候，会现在 getColor 的作用域寻找，如果没有，再到全局去寻找。</p>
+<h3 id="垃圾回收机制"><a href="#垃圾回收机制" class="headerlink" title="垃圾回收机制"></a>垃圾回收机制</h3><blockquote>
+<p>JavaScript 具有自动垃圾收集机制，也就是说，执行环境会负责管理代码执行过程中使用的内存。</p>
+</blockquote>
+<p>这种垃圾收集机制的原理其实很简单：找出那些不再继续使用的变量，然后释放其占用的内存。</p>
+<p>如何知道哪些变量不再使用了呢？</p>
+<p>有两种方法：</p>
+<ul>
+<li>标记清除</li>
+<li>引用计数</li>
+</ul>
+<p>目前最常用的是标记清除的方法。</p>
+<blockquote>
+<p>当变量进入环境（例如，在函数中声明一个变量）时，就将这个变量标记为“进入环境”。从逻辑上讲，永远不能释放进入环境的变量所占用的内存，因为只要执行流进入相应的环境，就可能会用到它们。而当变量离开环境时，则将其标记为“离开环境”。</p>
+</blockquote>
+<p>以上就是本期内容，下一期我们将了解 javascript 中更加详细的引用类型了。一起期待吧！</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -655,7 +776,7 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Hello World》
+                    《【读好书第二期】JS 的变量、作用域及内存问题》
                 </span> 由
             <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/21/hello-world/" property="cc:attributionName"
                rel="cc:attributionURL">
@@ -706,15 +827,19 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="【读好书第二期】JS 的变量、作用域及内存问题">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">【读好书第二期】JS 的变量、作用域及内存问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            前言
+JavaScript 变量松散类型的本质，决定了它只是在特定时间用于保存特定值的一个名字而已。
+
+因为上述的 javascript 变量的特质，导致 javascript 语言既强大又有趣，然而也会出现各种问题。
+今天这篇文章，重点讲
                         
                     </div>
                     <div class="publish-info">
@@ -744,15 +869,19 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="【读好书第二期】JS 的变量、作用域及内存问题">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">【读好书第二期】JS 的变量、作用域及内存问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            前言
+JavaScript 变量松散类型的本质，决定了它只是在特定时间用于保存特定值的一个名字而已。
+
+因为上述的 javascript 变量的特质，导致 javascript 语言既强大又有趣，然而也会出现各种问题。
+今天这篇文章，重点讲
                         
                     </div>
                     <div class="publish-info">
