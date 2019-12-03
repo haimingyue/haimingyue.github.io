@@ -4,12 +4,25 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【读好书第一期】js高级程序设计之js基础知识, 阿飞和小蝴蝶的故事">
-    <meta name="description" content="《js 高级程序设计》俗称《红宝书》，是前端人员必读的一本好书，这次是我第二次看《红宝书》，希望可以将其中常见、常用的知识以及常常踩的误区，整理出来。
-今天这篇内容，我们跳过了 JS 的历史，主要介绍了一下以下内容：
+    <meta name="keywords" content="h5share, 阿飞和小蝴蝶的故事">
+    <meta name="description" content="H5 如何接入微信公众号公众号分类
+服务号
+侧重于企业的服务
+每月发表 4 次文章
+用于媒体和企业
 
-Dom 的介绍
-Bo">
+
+订阅号
+用于个人
+每天群发一次
+不支持支付功能
+
+
+小程序
+
+公众号注册流程
+个人
+需要注意的是，如果创建了公众号，服务类型就不能再更改">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +30,7 @@ Bo">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【读好书第一期】js高级程序设计之js基础知识 | 阿飞和小蝴蝶的故事</title>
+    <title>h5share | 阿飞和小蝴蝶的故事</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -334,13 +347,13 @@ Bo">
 
  
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【读好书第一期】js高级程序设计之js基础知识
+                        h5share
                     </div>
                 </div>
             </div>
@@ -447,12 +460,8 @@ Bo">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" target="_blank">
-                                <span class="chip bg-color">读书笔记</span>
-                            </a>
-                        
-                            <a href="/tags/Javascript/" target="_blank">
-                                <span class="chip bg-color">Javascript</span>
+                            <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/" target="_blank">
+                                <span class="chip bg-color">微信开发</span>
                             </a>
                         
                     </div>
@@ -466,7 +475,7 @@ Bo">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-01
+                    2019-12-03
                 </div>
 
                 
@@ -482,229 +491,169 @@ Bo">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>《js 高级程序设计》俗称《红宝书》，是前端人员必读的一本好书，这次是我第二次看《红宝书》，希望可以将其中常见、常用的知识以及常常踩的误区，整理出来。</p>
-<p>今天这篇内容，我们跳过了 JS 的历史，主要介绍了一下以下内容：</p>
-<ul>
-<li>Dom 的介绍</li>
-<li>Bom 的介绍</li>
-<li>js 如何在 html 中引用</li>
-<li>js 的基本概念</li>
-</ul>
-<h2 id="Dom-和-Bom"><a href="#Dom-和-Bom" class="headerlink" title="Dom 和 Bom"></a>Dom 和 Bom</h2><h5 id="文档对象模型"><a href="#文档对象模型" class="headerlink" title="文档对象模型"></a>文档对象模型</h5><blockquote>
-<p>文档 对象 模型（ DOM， Document Object Model） 是 针对 XML 但 经过 扩展 用于 HTML 的 应用 程序 编程 接口（ API， Application Programming Interface）。 DOM 把 整个 页面 映射 为 一个 多层 节点 结构。</p>
-</blockquote>
-<p>通俗点说：</p>
-<blockquote>
-<p>扩展的 xml，方便调用的 Dom 节点。</p>
-</blockquote>
-<p>作用： 删除、 添加、 替换 或 修改</p>
-<h5 id="Dom"><a href="#Dom" class="headerlink" title="Dom"></a>Dom</h5><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8rzh9rbvwj30e40953yq.jpg" alt="image-20191109153003848"></p>
-<h5 id="Bom"><a href="#Bom" class="headerlink" title="Bom"></a>Bom</h5><blockquote>
-<p>BOM 只 处理 浏览器 窗口 和 框架； 但 人们 习惯上 也 把 所有 针对 浏览器 的 JavaScript 扩展 算作 BOM 的 一部分。</p>
-</blockquote>
-<p>作用：</p>
-<ol>
-<li>弹出新浏览器窗口的功能；</li>
-<li>移动、 缩放和关闭浏览器窗口的功能；</li>
-<li>提供浏览器详细信息 的 navigator 对象；</li>
-<li>提供 浏览器 所加 载 页面 的 详细信息 的 location 对象；</li>
-<li>提供 用户 显示器 分辨率 详细信息 的 screen 对象；</li>
-<li>对 cookies 的 支持；</li>
-<li>像 XMLHttpRequest 和 IE 的 ActiveXObject 这样 的 自定义 对象。</li>
-</ol>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8rzhj4ku2j30aq072wei.jpg" alt="image-20191109153520857"></p>
-<h2 id="Html-中使用-javascript"><a href="#Html-中使用-javascript" class="headerlink" title="Html 中使用 javascript"></a>Html 中使用 javascript</h2><h3 id="script-标签"><a href="#script-标签" class="headerlink" title="script 标签"></a>script 标签</h3><h4 id="script-的常用属性"><a href="#script-的常用属性" class="headerlink" title="script 的常用属性"></a>script 的常用属性</h4><ul>
-<li>async：立即下载</li>
-<li>charset：字符集</li>
-<li>defer：延迟执行</li>
-<li>src：外部链接</li>
-<li>type：脚本类型，默认<code>text/ javascript</code></li>
-</ul>
-<p>注意：包含在<code>&lt;script&gt;</code>元素内部的 JavaScript 代码将被 从上至下依次解释。并且会阻塞代码执行。</p>
-<h5 id="defer-的使用"><a href="#defer-的使用" class="headerlink" title="defer 的使用"></a>defer 的使用</h5><p>使用<code>defer</code>属性（defer 只适用于外部脚本）或者把 script 标签放在页面最后面，可以解决<code>js</code>阻塞页面加载，出现空白的情况。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> defer<span class="token operator">=</span><span class="token string">" defer"</span> src<span class="token operator">=</span><span class="token string">"example1.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
-<h5 id="异步脚本"><a href="#异步脚本" class="headerlink" title="异步脚本"></a>异步脚本</h5><p><code>async</code>的作用和 defer 差不多，它让浏览器立即下载文件，但是 async 标记的脚本不保证执行顺序。</p>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8rzhrjqgqj30ed0a6q39.jpg" alt="image-20191109155726038"></p>
-<p>需要注意的是，<code>保留字</code>和<code>关键字</code>不能被使用。</p>
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>使用<code>val</code>就可以声明一个变量。如何声明那个这里不加赘述。需要注意的是，var 声明的变量是作用域中的局部变量。比如说，在<code>function</code>中用<code>var</code>定义一个变量，函数执行时就会生成一个变量，函数销毁的时候，就会销毁这个变量。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">var</span> message <span class="token operator">=</span> <span class="token string">"hi"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 局部 变量</span>
-<span class="token punctuation">}</span>
-<span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">alert</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 错误！</span></code></pre>
-<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>js 中有 5 种简单的数据类型 和一种复杂的数据类型。</p>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8rzi01vqyj30ei0agjro.jpg" alt="image-20191109160848923"></p>
-<h3 id="typeof-操作符"><a href="#typeof-操作符" class="headerlink" title="typeof 操作符"></a>typeof 操作符</h3><blockquote>
-<p>因为 js 是松散型的，所以需要 typeof 来提供数据类型的信息。</p>
-</blockquote>
-<h5 id="typeof-需要注意的几个问题："><a href="#typeof-需要注意的几个问题：" class="headerlink" title="typeof 需要注意的几个问题："></a>typeof 需要注意的几个问题：</h5><ul>
-<li>返回的值都是字符串</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8rzi95231j30a80ca74l.jpg" alt="image-20191109161333628"></p>
-<p>在这里你会注意到一个奇怪的问题，typeof 返回的值比基本数据类型少了一个 null，多了一个 function</p>
-<p>这是因为 typeof null 返回的是 Object。这是 js 由来已久的 bug。</p>
-<p>而 function 虽然是 Object，但是它在 js 中事<code>一等公民</code>，需要和其他的 Object 对象加以区分。</p>
-<h4 id="null-和-undefined-的区别"><a href="#null-和-undefined-的区别" class="headerlink" title="null 和 undefined 的区别"></a>null 和 undefined 的区别</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">null</span> <span class="token operator">==</span> undefined<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span></code></pre>
-<p>虽然上述的例子成立，但是 null 和 undefiled 是完全不同的两回事。</p>
-<p><code>undefined</code>代表的是变量未声明，一般不用显示的去定义一个变量是<code>undefined</code>。</p>
-<p><code>null</code>一般作为一个空指针对象，也就是说，你想声明一个未来需要保存对象的变量，就可以赋值为<code>null</code></p>
-<h4 id="Number-类型"><a href="#Number-类型" class="headerlink" title="Number 类型"></a>Number 类型</h4><ul>
-<li>浮点型</li>
-<li>整形</li>
-</ul>
-<p>关于 Number 类型需要注意一下几点：</p>
-<ul>
-<li>你永远不要做下面这种危险的操作</li>
-</ul>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">+</span> b <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">.</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">" You got 0. 3."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>这是因为，<code>0.1+0.2</code>的结果是<code>0.30000000000000004</code></p>
-<p>究其原因是：</p>
-<blockquote>
-<p>这是使用基于 IEEE754 数值的浮点计算的通病， ECMAScript 并非独此 一家； 其他使用相同数值 格式的语言也存在这个问题。</p>
-</blockquote>
-<ul>
-<li>Nan<ul>
-<li>是表示本来要返回数值的操作数未返回数值，返回 Nan 可以避免抛出错误。</li>
-<li>Nan 不等于本身</li>
-<li>通过 isNan 可以判断</li>
+                <h1 id="H5-如何接入微信公众号"><a href="#H5-如何接入微信公众号" class="headerlink" title="H5 如何接入微信公众号"></a>H5 如何接入微信公众号</h1><h2 id="公众号分类"><a href="#公众号分类" class="headerlink" title="公众号分类"></a>公众号分类</h2><ul>
+<li>服务号<ul>
+<li>侧重于企业的服务</li>
+<li>每月发表 4 次文章</li>
+<li>用于媒体和企业</li>
 </ul>
 </li>
-<li>类型转换<ul>
-<li>类型转换的规则有点复杂。这里不加表述。如果想要了解更多，<a href="https://www.runoob.com/js/js-type-conversion.html" target="_blank" rel="noopener">参考文章</a></li>
+<li>订阅号<ul>
+<li>用于个人</li>
+<li>每天群发一次</li>
+<li>不支持支付功能</li>
+</ul>
+</li>
+<li>小程序</li>
+</ul>
+<p>公众号注册流程</p>
+<p><a href="http://www.imooc.com/article/279586" target="_blank" rel="noopener">个人</a></p>
+<p>需要注意的是，如果创建了公众号，服务类型就不能再更改了。</p>
+<p><a href="https://kf.qq.com/faq/170104AJ3y26170104Yj673y.html" target="_blank" rel="noopener">各种权限接口说明</a></p>
+<p><a href="http://www.imooc.com/article/281154" target="_blank" rel="noopener">服务号注册流程</a></p>
+<h2 id="平台测试号的使用"><a href="#平台测试号的使用" class="headerlink" title="平台测试号的使用"></a>平台测试号的使用</h2><p>测试号可以使用分享功能</p>
+<p><a href="https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&amp;t=sandbox/index" target="_blank" rel="noopener">微信测试号地址</a></p>
+<ul>
+<li>分享功能需要的安全域名</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9i9jf2t4qj31mk08e3zj.jpg" alt="image-20191202122543768"></p>
+<p>注意： 服务号要绑定开发者。</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9i9qzzugrj31jw0tstb9.jpg" alt="image-20191202123303273"></p>
+<p>验证安全域名</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9i9rqrr9lj319s0u013i.jpg" alt="image-20191202123323816"></p>
+<p>网页授权域名是获取用户信息的回调域名。</p>
+<h2 id="微信授权流程"><a href="#微信授权流程" class="headerlink" title="微信授权流程"></a>微信授权流程</h2><p>打开网页时候需要进行授权昵称。分享和支付之前必须要授权。</p>
+<h4 id="业务域名-amp-js-接口安全域名-amp-网页授权域名的区别"><a href="#业务域名-amp-js-接口安全域名-amp-网页授权域名的区别" class="headerlink" title="业务域名&amp;js 接口安全域名&amp;网页授权域名的区别"></a>业务域名&amp;js 接口安全域名&amp;网页授权域名的区别</h4><ul>
+<li>业务域名<ul>
+<li>当前业务使用的域名</li>
+<li>支付密码的时候，不会出现安全提示</li>
+</ul>
+</li>
+<li>js 接口安全域名<ul>
+<li>微信开放的接口使用安全域名</li>
+</ul>
+</li>
+<li>网页授权域名<ul>
+<li>打开 app 的时候，使用微信授权登录。</li>
+<li>点击跳转微信的 app 内，然后回调到这个页面。配置回调页面必须是我们自己的页面。</li>
 </ul>
 </li>
 </ul>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
-<li>字符字面量</li>
+<h4 id="网页授权的-access-token-和-普通的-access-token-的区别"><a href="#网页授权的-access-token-和-普通的-access-token-的区别" class="headerlink" title="网页授权的 access_token 和 普通的 access_token 的区别"></a>网页授权的 access_token 和 普通的 access_token 的区别</h4><ul>
+<li>网页授权的 access_token，用来获取用户的信息，头像逆臣</li>
+<li>普通的：作用防范，调用非网页授权的所有接口</li>
 </ul>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8rzirdlnfj30bi0fkabg.jpg" alt="image-20191109163805648"></p>
+<h4 id="UnionID：-公众平台的唯一-ID（小程序、服务号统一-id）"><a href="#UnionID：-公众平台的唯一-ID（小程序、服务号统一-id）" class="headerlink" title="UnionID： 公众平台的唯一 ID（小程序、服务号统一 id）"></a>UnionID： 公众平台的唯一 ID（小程序、服务号统一 id）</h4><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ia5vre2pj31b2084dhi.jpg" alt="image-20191202124721291"></p>
+<p>使用场景：</p>
+<p>每一个应用对一个用户分别对应 openid。但是 unionID 是唯一的。</p>
+<h2 id="授权流程"><a href="#授权流程" class="headerlink" title="授权流程"></a>授权流程</h2><ul>
+<li>用户统一授权</li>
+<li>通过 Code 换区 Access_token</li>
+<li>拉取用户信息</li>
+</ul>
+<p>静默授权和普通授权的区别</p>
 <ul>
-<li>字符串是可不变的，一旦创建，它的值就不可变。如果改变，就会销毁原来的字符串，用另外一个字符串填充。</li>
-<li>转换字符串的方法<code>toString()</code>,这个方法将在第三篇文章介绍。这里需要了解的是，null 和 undefined 是没有<code>toString()</code>方法的</li>
+<li>静默授权不需要用户同意，但是无法获取用户的信息</li>
+<li>用户同意授权。获取 code</li>
+<li>通过 code 获取网页授权的 access_token</li>
+<li>拿到 access_token 就可以拉去用户信息了。（scope：snsapi_userinfo）</li>
 </ul>
-<h3 id="Object-对象"><a href="#Object-对象" class="headerlink" title="Object 对象"></a>Object 对象</h3><p>最后介绍这个特别特殊的类型。</p>
-<blockquote>
-<p>Object 类型是所有它的实例的基础。换句话说， Object 类型所具有的任何属性 、方法也同样存在于更具体的对象中。</p>
-</blockquote>
-<p>它具有以下属性和方法（常见）</p>
-<ul>
-<li>Construcctor 保存创建当前对象的函数</li>
-<li>hasOwnproperty 检查属性是自身的还是继承的</li>
-<li>isPrototypeOf 检查对象是否是另外一个对象的原型</li>
-<li>propertyIsEnumerable 是否可以用<code>for in</code>来枚举</li>
+<h2 id="JS-SDK-调用流程"><a href="#JS-SDK-调用流程" class="headerlink" title="JS-SDK 调用流程"></a>JS-SDK 调用流程</h2><ul>
+<li>绑定域名：js 接口安全域名、业务域名…</li>
+<li>引用 js-sdk 文件</li>
+<li>通过 config 接口注入权限验证配置（先取到接口签名）</li>
+<li>通过 ready 接口处理成功验证</li>
 </ul>
-<p>关于 Obeject 对象，将会在后续的文章深入讨论。</p>
-<h3 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h3><ul>
-<li>算术操作符</li>
-<li>位操作符(不讨论)</li>
-<li>关系操作符</li>
-<li>相等操作符</li>
-</ul>
-<h4 id="一元操作符"><a href="#一元操作符" class="headerlink" title="一元操作符"></a>一元操作符</h4><blockquote>
-<p>一元操作符： 只能 操作一个值的操作符叫做一元操作符</p>
-</blockquote>
-<p>递增： <code>++</code></p>
-<p>递减：<code>--</code></p>
-<p>如果放在前面。则先递增（递减）， 再参与运算。如果放在后面，则反之。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">29</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> anotherAge <span class="token operator">=</span> <span class="token operator">--</span>age <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token function">alert</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 输出 28</span>
-<span class="token function">alert</span><span class="token punctuation">(</span>anotherAge<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 输出 30</span></code></pre>
-<h3 id="关系操作符"><a href="#关系操作符" class="headerlink" title="关系操作符"></a>关系操作符</h3><ul>
-<li>逻辑非 <code>!</code></li>
-<li>逻辑与 `&amp;&amp;</li>
-<li>逻辑或 <code>||</code></li>
-</ul>
-<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><ul>
-<li>乘性</li>
-<li>除</li>
-<li>模</li>
-<li>加减</li>
-<li>等于<ul>
-<li>需要注意<code>==</code>和<code>===</code>的区别。我个人在代码中一律用<code>===</code></li>
-</ul>
-</li>
-<li>赋值</li>
-</ul>
-<h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><ul>
-<li>if</li>
-<li>do-while</li>
-<li>while</li>
-<li>for</li>
-<li>for in</li>
-<li>break 和 continue</li>
-<li>with</li>
-<li>switch</li>
-</ul>
-<p>示例</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// if</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>condition<span class="token punctuation">)</span> statement1 <span class="token keyword">else</span> statement2</code></pre>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// do-while</span>
-<span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">do</span> <span class="token punctuation">{</span>
-  i <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token function">alert</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// while</span>
-<span class="token keyword">while</span> <span class="token punctuation">(</span>expression<span class="token punctuation">)</span> statement<span class="token punctuation">;</span></code></pre>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// for</span>
-<span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> i<span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token function">alert</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//for-in语句是一种精准的迭代语句， 可以用来枚举 对象的属性。</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span>property <span class="token keyword">in</span> expression<span class="token punctuation">)</span> statement<span class="token punctuation">;</span></code></pre>
-<p>注意：为了保证最大限度的兼容性， 建议在使用 for-in 循环之前，先检测确认确认该对象的值不是 null 或 undefined</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// break &amp; continue</span>
-<span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">break</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  num<span class="token operator">++</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token function">alert</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//4</span>
-
-<span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">continue</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  num<span class="token operator">++</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token function">alert</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//8</span></code></pre>
-<p>Break 中止循环，continue 跳过这一次循环。</p>
-<p>Es6 中的 foreach 不可被中止。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// switch</span>
-<span class="token keyword">switch</span> <span class="token punctuation">(</span>expression<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">case</span> value<span class="token punctuation">:</span>
-        statement <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token keyword">case</span> value<span class="token punctuation">:</span>
-        statement <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token keyword">case</span> value<span class="token punctuation">:</span>
-        statement <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token keyword">case</span> value<span class="token punctuation">:</span>
-        statementbreak<span class="token punctuation">;</span>
-    <span class="token keyword">default</span><span class="token punctuation">:</span> statement
-<span class="token punctuation">}</span></code></pre>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数的基本用法，这里不加讨论。需要注意以下两点</p>
-<ul>
-<li>推荐让函数始终都返回一个值，要么永远都不要返回 值。 否则，如果函数有时候返回值，有时候有不返回值，会给调试代码带来不便。</li>
-<li>js 的函数参数，不关心传递了多少，也不关心传递了什么类型。原因是 ECMAScript 中的参数在内部是用 一个数组来表示的。 函数接收到的始终都是这个数组， 而不关心数组中包含哪些参数（ 如果有参数 的 话）。 如果这个数组中不包含任何元素， 无所谓； 如果包含多个元素， 也没有问题。 实际上， 在函数 体内可以通过 arguments 对象来访问这个参数数组， 从而获取传递给函数的每一个参数。</li>
-<li>没有传递的参数将被赋值成<code>undefined</code></li>
-</ul>
-<p>通过 arguments 来获取参数个数示例</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">howManyArgs</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token function">alert</span><span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token function">howManyArgs</span><span class="token punctuation">(</span><span class="token string">"string"</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//2 howManyArgs(); //0</span>
-<span class="token function">howManyArgs</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//1</span></code></pre>
-<p>以上是对 js 基本内容的简介，下一回，我们将详细介绍<code>基本类型</code>和<code>引用类型</code>的区别以及<code>js的执行环境</code>和<code>垃圾回收机制</code>。敬请期待。</p>
+<p><a href="https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Get_access_token.html" target="_blank" rel="noopener">官方文档</a></p>
+<p><a href="http://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&amp;t=sandbox/index" target="_blank" rel="noopener">测试号申请地址</a></p>
+<h2 id="H5-添加域名代理-amp-域名解析"><a href="#H5-添加域名代理-amp-域名解析" class="headerlink" title="H5 添加域名代理&amp;域名解析"></a>H5 添加域名代理&amp;域名解析</h2><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9imj8idb7j30oa07igmj.jpg" alt="image-20191202195523574"></p>
+<h4 id="vue-如何使用代理？"><a href="#vue-如何使用代理？" class="headerlink" title="vue 如何使用代理？"></a>vue 如何使用代理？</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// vue.config.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 设置主机地址</span>
+    host<span class="token punctuation">:</span> <span class="token string">"m.imooc.com"</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">// 设置默认端口</span>
+    port<span class="token punctuation">:</span> <span class="token number">80</span><span class="token punctuation">,</span>
+    proxy<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      api<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 设置api地址</span>
+        target<span class="token punctuation">:</span> <span class="token string">"http://localhost:5000"</span><span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">// 如果要dailiwebsocker</span>
+        ws<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">// 将主机标头的原点改为目标url</span>
+        changeOrigin<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<h2 id="修改本地-host-软件"><a href="#修改本地-host-软件" class="headerlink" title="修改本地 host 软件"></a>修改本地 host 软件</h2><p>百度网盘地址</p>
+<pre><code>https://pan.baidu.com/s/1t4HjFvgYvfRNJxrbcSmTng</code></pre><p>修改方式</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9impy1p78j318p0u075q.jpg" alt="image-20191202200148733"></p>
+<h2 id="H5-如何接入微信分享"><a href="#H5-如何接入微信分享" class="headerlink" title="H5 如何接入微信分享"></a>H5 如何接入微信分享</h2><p><a href="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html" target="_blank" rel="noopener">官方文档</a></p>
+<p>第一步：请求路由的配置</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// api_test: '/api/test'</span>
+  <span class="token comment" spellcheck="true">// 跳转放在服务端</span>
+  wechatRedirect<span class="token punctuation">:</span>
+    <span class="token string">"/wechat/redirect?url=http%3A%2F%2Fm.imooc.com%2Findex&amp;scope=snsapi_userinfo"</span><span class="token punctuation">,</span>
+  wechatConfig<span class="token punctuation">:</span> <span class="token string">"/wechat/jssdk"</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 获取jssdk的接口</span>
+  getUserInfo<span class="token punctuation">:</span> <span class="token string">"/wechat/getUserInfo"</span><span class="token punctuation">,</span>
+  payWallet<span class="token punctuation">:</span> <span class="token string">"/wechat/pay/payWallet"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>第一步：判断是否登录</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">checkUserAuth</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">checkUserAuth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> openId <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$cookie<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'openId'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>openId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token operator">=</span>API<span class="token punctuation">.</span>wechatRedirect<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span></code></pre>
+<p>第二步：获取 config 信息, 然后执行 ready 方法注入分享功能。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token function">getConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$http<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>API<span class="token punctuation">.</span>wechatConfig<span class="token operator">+</span><span class="token string">'?url='</span><span class="token operator">+</span>location<span class="token punctuation">.</span>href<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'#'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> res <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">let</span> data <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+          <span class="token comment" spellcheck="true">// 注入config</span>
+          wx<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            debug<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。</span>
+            appId<span class="token punctuation">:</span> data<span class="token punctuation">.</span>appId<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 必填，公众号的唯一标识</span>
+            timestamp<span class="token punctuation">:</span> data<span class="token punctuation">.</span>timestamp<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 必填，生成签名的时间戳</span>
+            nonceStr<span class="token punctuation">:</span> data<span class="token punctuation">.</span>nonceStr<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 必填，生成签名的随机串</span>
+            signature<span class="token punctuation">:</span> data<span class="token punctuation">.</span>signature<span class="token punctuation">,</span><span class="token comment" spellcheck="true">// 必填，签名</span>
+            jsApiList<span class="token punctuation">:</span> data<span class="token punctuation">.</span>jsApiList <span class="token comment" spellcheck="true">// 必填，需要使用的JS接口列表</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+          wx<span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+            util<span class="token punctuation">.</span><span class="token function">initShareInfo</span><span class="token punctuation">(</span>wx<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>注意：需要加上 url 进行签名（服务端完成）</p>
+<p>第三步：分享资源的配置</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//util.js</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">initShareInfo</span><span class="token punctuation">(</span>wx<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> shareInfo <span class="token operator">=</span> <span class="token punctuation">{</span>
+      title<span class="token punctuation">:</span> <span class="token string">"灯塔"</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 分享标题</span>
+      desc<span class="token punctuation">:</span> <span class="token string">"描述"</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 分享描述</span>
+      link<span class="token punctuation">:</span> <span class="token string">"http://m.imooc.com/#/index"</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致</span>
+      imgUrl<span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 分享图标</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    wx<span class="token punctuation">.</span><span class="token function">onMenuShareTimeline</span><span class="token punctuation">(</span>shareInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    wx<span class="token punctuation">.</span><span class="token function">onMenuShareAppMessage</span><span class="token punctuation">(</span>shareInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    wx<span class="token punctuation">.</span><span class="token function">onMenuShareQQ</span><span class="token punctuation">(</span>shareInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    wx<span class="token punctuation">.</span><span class="token function">onMenuShareQZone</span><span class="token punctuation">(</span>shareInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    wx<span class="token punctuation">.</span><span class="token function">updateAppMessageShareData</span><span class="token punctuation">(</span>shareInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    wx<span class="token punctuation">.</span><span class="token function">updateTimelineShareData</span><span class="token punctuation">(</span>shareInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -881,9 +830,9 @@ Bo">
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《【读好书第一期】js高级程序设计之js基础知识》
+                    《h5share》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/01/jsdeveloper1/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/03/h5share/" property="cc:attributionName"
                rel="cc:attributionURL">
                 simoon
             </a> 采用
@@ -923,9 +872,10 @@ Bo">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/12/03/h5share/">
                     <div class="card-image">
@@ -960,9 +910,9 @@ Bo">
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -971,6 +921,7 @@ Bo">
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -989,28 +940,28 @@ Bo">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/21/hello-world/">
+                <a href="/2019/12/01/jsdeveloper1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="【读好书第二期】JS 的变量、作用域及内存问题">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="【读好书第一期】js高级程序设计之js基础知识">
                         
-                        <span class="card-title">【读好书第二期】JS 的变量、作用域及内存问题</span>
+                        <span class="card-title">【读好书第一期】js高级程序设计之js基础知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前言
-JavaScript 变量松散类型的本质，决定了它只是在特定时间用于保存特定值的一个名字而已。
+                            《js 高级程序设计》俗称《红宝书》，是前端人员必读的一本好书，这次是我第二次看《红宝书》，希望可以将其中常见、常用的知识以及常常踩的误区，整理出来。
+今天这篇内容，我们跳过了 JS 的历史，主要介绍了一下以下内容：
 
-因为上述的 javascript 变量的特质，导致 javascript 语言既强大又有趣，然而也会出现各种问题。
-今天这篇文章，重点讲
+Dom 的介绍
+Bo
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-21
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-01
                             </span>
                         <span class="publish-author">
                             
